@@ -14,7 +14,7 @@ export const MatchPage = () => {
     useEffect(
         () => {
             const fetchMathes = async() => {
-                const response = await fetch(`http://localhost:8080/team/${teamName}/matches?year=${year}`);
+                const response = await fetch(`/team/${teamName}/matches?year=${year}`);
                 const data = await response.json();
                 setMatches(data);
                 setFilteredMatch(data);
@@ -37,14 +37,6 @@ export const MatchPage = () => {
           case "loss":
               filteredList = currentList.filter(item =>
                   item.matchWinner !== teamName);
-            break;
-          case "bat":
-              filteredList = currentList.filter(item =>
-                  item.tossDecision === "bat");
-            break;
-          case "ball":
-              filteredList = currentList.filter(item =>
-                  item.tossDecision === "field");
             break;
           default:
             filteredList = currentList;
@@ -93,13 +85,11 @@ export const MatchPage = () => {
                     value={filterTerm}
 
                 >
-                    <option value="" selected>
+                    <option value="" defaultValue={"Filter By"}>
                         Filter By
                     </option>
                     <option value="win">Wins</option>
                     <option value="loss">Losses</option>
-                    <option value="bat">Bat First</option>
-                    <option value="bowl">Bowl First</option>
                 </select>
                 <input
                     type="text"
