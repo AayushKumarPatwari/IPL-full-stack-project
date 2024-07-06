@@ -1,7 +1,16 @@
 .TeamTile {
-    height: 170px;
+    height: auto;
     text-align: center;
     border: 1px solid white;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+
+    .logoImg{
+        width: 50%;
+        height: 75%;
+        object-fit: cover;
+    }
 
 }
+

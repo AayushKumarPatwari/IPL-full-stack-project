@@ -1,6 +1,8 @@
 .MatchPage {
     display: grid;
     grid-template-columns: 1fr 5fr;
+    grid-column-gap: 20px;
+
 
     .year-selector {
         justify-self: end;
@@ -9,5 +11,45 @@
 
     .page-heading {
         margin: 20px auto;
+    }
+
+    .match-details{
+        .team-heading-bar{
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+
+            .page-heading{
+                align-self: center;
+                justify-self: center;
+                padding-top: none;
+            }
+
+            .summary-link{
+                align-self: center;
+                justify-self: center;
+                padding-top: none;
+            }
+
+            select{
+                width: 142px;
+                height: 40px;
+                border: 0.5px solid #9a9a9a50;
+                opacity: 1;
+                border-radius: 0px;
+                margin: 0 0 0 5px;
+                margin: 10px;
+            }
+
+
+            input{
+                width: 200px;
+                height: 40px;
+                border: 0.5px solid #9a9a9a50;
+                opacity: 1;
+                border-radius: 0px;
+                margin: 0 5px;
+                font-size: 18px;
+            }
+        }
     }
 }
